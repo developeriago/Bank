@@ -1,0 +1,56 @@
+<div class="login-content">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12 col-md-9">
+                <div class="card o-hidden border-0 shadow my-5">
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6">
+                                <div class="login p-5">
+                                    <div class="text-center">
+                                        <h1>Bem Vindo ao TivicBank!</h1>
+                                    </div>
+                                    <form class="user needs-validation" novalidate [formGroup]="form">
+
+
+                                        <div class="form-group">
+                                            <mat-form-field [style.width.px]=350 appearance="outline">
+
+                                                <mat-label>CPF</mat-label>
+                                                <input matInput placeholder="000.000.000.00" formControlName="cpf">
+                                                <mat-error *ngIf="form.get('cpf')?.invalid">{{getErrorMessage('cpf')}}</mat-error>
+                                                <mat-icon matSuffix>fingerprint</mat-icon>
+
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <mat-form-field [style.width.px]=350 appearance="outline">
+
+                                                <mat-label>Senha</mat-label>
+                                                <input type="password" matInput placeholder=".........." formControlName="senha">
+                                                <mat-error *ngIf="form.get('senha')?.invalid">{{getErrorMessage('senha')}}</mat-error>
+                                                <mat-icon matSuffix>lock</mat-icon>
+
+                                            </mat-form-field>
+                                        </div>
+
+                                        <button type="submit" (click)="login()"
+                                            class="btn btn-send btn-user btn-block">Login</button>
+
+                                    </form>
+                                    <hr>
+
+                                    <div class="text-center">
+                                        <a [routerLink]="['/cadastrar']">Criar conta</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
